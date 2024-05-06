@@ -12,8 +12,9 @@ const PostComment = (id) => {
   const ChangeText = (e) => {
     setDoComment(e.target.value);
   };
-
-  const userID = JSON.parse(localStorage.getItem("data-user")).userId;
+  if (JSON.parse(localStorage.getItem("data-user")) != null) {
+    var userID = JSON.parse(localStorage.getItem("data-user")).userId;
+  }
 
   const Submit = async (e) => {
     setLoading(true);
