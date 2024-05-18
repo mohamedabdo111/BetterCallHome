@@ -4,6 +4,8 @@ import pic from "../images/Rectangle 32.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckDouble } from "@fortawesome/free-solid-svg-icons";
 import "../../style.css";
+import { Chart as ChartJS } from "chart.js/auto";
+import { Bar, Doughnut, Line } from "react-chartjs-2";
 import Adminnavbar from "../admin/Adminnavbar";
 const OwnerOverview = () => {
   let userData = "";
@@ -79,6 +81,53 @@ const OwnerOverview = () => {
               </div>
             </Col>
           </Row>
+        </Col>
+        <Col sm="12" className="bg-white rounded-2 p-5">
+          <Line
+            data={{
+              labels: [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+              ],
+              datasets: [
+                {
+                  label: "Total Users",
+                  data: [42, 58, 76, 23, 89, 15, 94, 60, 33, 47, 71, 28],
+                  backgroundColor: "white",
+                  borderColor: "#7a4cfc",
+                  borderJoinStyle: "miter",
+                },
+              ],
+            }}
+            options={{
+              elements: {
+                line: {
+                  tension: 0.5,
+                },
+              },
+              scales: {
+                x: {
+                  grid: {
+                    display: false,
+                  },
+                },
+                y: {
+                  display: false,
+                  beginAtZero: true,
+                },
+              },
+            }}
+          ></Line>
         </Col>
       </Row>
     </div>

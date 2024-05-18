@@ -14,6 +14,7 @@ import AddReact from "../../../hocksJs/User_hocks/add_React";
 const ApartmentDetailsPage = () => {
   const { id } = useParams();
   const [res, AllComments, Clicker] = GetApartmentDetails(id);
+  console.log(AllComments);
   let ImageSlider = "";
   if (AllComments && AllComments.data) {
     ImageSlider = AllComments.data.apartmentsImages;
